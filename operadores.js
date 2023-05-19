@@ -21,7 +21,7 @@ Operadores Aritméticos
 */
 
 // Operadores de modulos %
-// El operador de módulo devuelve el resto de la división entre dos números
+// El operador de módulo devuelve el resto de la división entre dosjpl. números
 
 const resultado = 10 % 3;
 console.log(resultado);
