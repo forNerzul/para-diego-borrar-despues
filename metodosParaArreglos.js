@@ -118,4 +118,7 @@ const frutas = [
     "Piña",
     "Naranja",
 ];
+console.log(frutas);
 const frutasFavoritas = frutas.slice(1, 5); // El primer argumento define desde donde se copia el elemento, y el segundo argumento define hasta donde se copia el elemento.
+// En el ejemplo de arriba, se copiaria desde el elemnto (1 = Pera) hasta el elemento (5 = Piña), pero sin incluir el elemento de la posicion indicada (5 = Piña). Por lo tanto, copiaria desde el elemento (1 = Pera) hasta el elemento (4 = Sandia).
+console.log(frutasFavoritas);
