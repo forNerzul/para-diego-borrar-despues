@@ -5,15 +5,15 @@
 */
 
 const nombres = [
-    "Dnmlss",
-    "Petter",
-    "Corey",
-    "Jhon",
-    "Salchichon",
-    "Regal",
-    "Corey",
-    "Marcell",
-    "Aladin",
+	"Dnmlss",
+	"Petter",
+	"Corey",
+	"Jhon",
+	"Salchichon",
+	"Regal",
+	"Corey",
+	"Marcell",
+	"Aladin",
 ];
 console.log(nombres.indexOf("Corey")); // nos mostraria el index numero 2.
 
@@ -36,7 +36,7 @@ console.log(nombres.lastIndexOf("Corey")); // nos mostraria el index numero 6.
 // El parametro nombre es cada elemento del arreglo. nos mostraria Hola Dnmlss, Hola Petter, etc. En caso que no lleve parametro, nos mostraria "Hola nombre" y un globo con el numero 9, ya que tenemos 9 elementos en nuestro arreglo.
 
 nombres.forEach((nombre, index) => {
-    console.log(`Hola ${nombre} (${index})`);
+	console.log(`Hola ${nombre} (${index})`);
 });
 
 /*   .find()
@@ -50,9 +50,9 @@ nombres.forEach((nombre, index) => {
 // En este caso, utilizando un if, le decimos que si el primer elemento del arreglo es igual a "S", nos retorne el elemento que comienza con S.
 
 const resultado = nombres.find((nombre) => {
-    if (nombre[0] === "S") {
-        return nombre;
-    }
+	if (nombre[0] === "S") {
+		return nombre;
+	}
 });
 
 console.log(resultado); // nos mostraria Salchichon, ya que es el primer elemento que empieza con S.
@@ -65,8 +65,8 @@ console.log(resultado); // nos mostraria Salchichon, ya que es el primer element
 
 // Este metodo se va a utilizar bastante para cuando queres ejecutar una funcion por cada elemento, y ese elemento devolverlo para guardarlo en un arreglo. Ya sea si tiene una modificacion de cualquier tipo, como por ejemplo, en el ejemplo de abajo convertimos todos los elementos en mayusculas.
 
-nombresMayusculas = nombres.map((nombre) => {
-    return nombre.toUpperCase();
+const nombresMayusculas = nombres.map((nombre) => {
+	return nombre.toUpperCase();
 });
 console.log(nombresMayusculas); // nos mostraria el arreglo con todos los elementos en mayusculas.
 
@@ -86,8 +86,48 @@ console.log(nombresMayusculas2);
 */
 
 const nombres4Letras = nombres.filter((nombre) => {
-    if (nombre.length === 6) {
-        return nombre;
-    }
+	if (nombre.length === 4) {
+		return nombre;
+	}
 });
 console.log(nombres4Letras);
+
+/*
+    .inlcudes()
+    Nos permite saber si el arreglo contiene un elemento especificado.
+    nos devuelve como valor true si el elemento existe en el arreglo. Si no existe nos devuelve false.
+*/
+
+console.log(nombres.includes("Dnmlss"));
+console.log(nombres.includes("Di Minho"));
+
+/*
+    .every()
+    Nos permite ejecutar una condicional sobre cada elemento y nos devuelve true si TODOS los elementos cumplen la condicion.
+    - Sirve para validar formularios comprobando si todos los campos sean validos.
+*/
+
+const nombresValidos = nombres.every((nombre) => {
+	if (typeof nombre === "string") {
+		return true;
+	} else {
+		return false;
+	}
+});
+console.log(`Todos los nombres son validos? ${nombresValidos}`);
+
+/*
+    .some()
+    Nos permite ejecutar una condicional sobre cada elemento y nos devuelve true si ALGUNOS de los elementos cumplen esa condicion.
+*/
+
+const cumplenLaCondicion = nombres.some((nombre) => {
+	if (typeof nombre !== "string") {
+		return true;
+	} else {
+		return false;
+	}
+});
+// true si hay algun valor invalido
+// false si no hay ningun valor invalido
+console.log(`El arreglo es invalido? ${cumplenLaCondicion}`);
